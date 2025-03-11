@@ -296,7 +296,7 @@ class rtsp_server:
 
     def __send_rtp(self, image_callback, quality):  # private
         img = image_callback(self.__pathname, self.__session)
-        img = img.to_jpeg(quality=quality, subsampling=image.JPEG_SUBSAMPLING_422)
+        img = img.to_jpeg(quality=quality, subsampling=image.JPEG_SUBSAMPLING_420)
         if img.width() >= 2040:
             raise ValueError("Maximum width is 2040")
         if img.height() >= 2040:
